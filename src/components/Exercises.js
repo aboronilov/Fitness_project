@@ -1,11 +1,37 @@
 import { Box, Stack, Typography } from '@mui/material';
-import { Pagination } from '@mui/material/Pagination';
+import { Pagination } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 
-import { exerciseOptions, fetchData } from '../utils/fetchData';
+import { exerciseOptions, fetchData, rapidApiURL } from '../utils/fetchData';
+import ExerciseCard from './ExerciseCard';
 
 const Exercises = ({bodyPart, exercises, setExercises}) => {
-    console.log(exercises)
+    const [currentPage, setCurrentPage] = useState(1);
+    const exercisesPerPage = 9;
+
+    const indexOfLastExercise = currentPage * exercisesPerPage;
+    const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
+    const currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExercise)
+
+    const paginate = (e, value) => {
+        setCurrentPage(value);
+        window.scrollTo({top: 1800, behavior: "smooth"})
+    }
+
+    useEffect(() => {
+        const fetchExerciseData = async () => {
+            let exercisesData = []
+            if (bodyPart==="all") {
+                exercisesData = await fetchData(rapidApiURL, exerciseOptions);
+            } else {
+                const url = `${rapidApiURL}/bodyPart/${bodyPart}`
+                exercisesData = await fetchData(url, exerciseOptions);
+            }
+            setExercises(exercisesData)
+        }
+        fetchExerciseData()
+    }, [bodyPart]);
+
     return (
         <Box 
             id="exercises"
@@ -22,9 +48,22 @@ const Exercises = ({bodyPart, exercises, setExercises}) => {
                 flexWrap="wrap"
                 justifyContent="center"
             >
-                {exercises.map((item, index) => (
-                    <p key={index}>{item.name}</p>
+                {currentExercises.map((exercise, index) => (
+                    <ExerciseCard key={index} exercise={exercise}/>
                 ))}
+            </Stack>
+            <Stack mt="100px" alignItems="center">
+                {exercises.length > 9 && (
+                    <Pagination 
+                        color="standard"
+                        shape="rounded"
+                        defaultPage={1}
+                        count={Math.ceil(exercises.length / exercisesPerPage)}
+                        page={currentPage}
+                        onChange={paginate}
+                        size="large"
+                    />
+                )}
             </Stack>
         </Box>
     );

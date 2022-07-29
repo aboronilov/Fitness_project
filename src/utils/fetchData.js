@@ -12,3 +12,5 @@ export const fetchData = async (url, options) => {
 
     return data;
 }
+
+export const rapidApiURL = 'https://exercisedb.p.rapidapi.com/exercises';
