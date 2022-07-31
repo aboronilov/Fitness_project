@@ -3,17 +3,17 @@ The deployed site is [here](https://your-fitness-coach.netlify.app/)
 
 ## Features
 1. Loading page
-![Landing page](https://github.com/aboronilov/Fitness_project/tree/master/src/assets/scrennshots/1.png)
+![Landing page](https://github.com/aboronilov/Fitness_project/blob/master/src/assets/scrennshots/1.png)
 2. Search and filter by categories
-![Search](https://github.com/aboronilov/Fitness_project/tree/master/src/assets/screenshots/2.png)
+![Search](https://github.com/aboronilov/Fitness_project/blob/master/src/assets/scrennshots/2.png)
 3. Search result
-![Result](https://github.com/aboronilov/Fitness_project/tree/master/src/assets/screenshots/3.png)
+![Result](https://github.com/aboronilov/Fitness_project/blob/master/src/assets/scrennshots/3.png)
 4. Execrcise datail page
-![Page](https://github.com/aboronilov/Fitness_project/tree/master/src/assets/screenshots/4.png)
+![Page](https://github.com/aboronilov/Fitness_project/blob/master/src/assets/scrennshots/4.png)
 5. Recommended videos
-![Videos](https://github.com/aboronilov/Fitness_project/tree/master/src/assets/screenshots/5.png)
+![Videos](https://github.com/aboronilov/Fitness_project/blob/master/src/assets/scrennshots/5.png)
 6. Recommended exercises
-![Exercises](https://github.com/aboronilov/Fitness_project/tree/master/src/assets/screenshots/6.png)
+![Exercises](https://github.com/aboronilov/Fitness_project/blob/master/src/assets/scrennshots/6.png)
 
 
 ## Technologies
