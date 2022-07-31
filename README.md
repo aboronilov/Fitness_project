@@ -3,7 +3,7 @@ The deployed site is [here](https://your-fitness-coach.netlify.app/)
 
 ## Features
 1. Loading page
-![Landing page](https://github.com/aboronilov/Fitness_project/tree/master/src/assets/screenshots/1.png)
+![Landing page](https://github.com/aboronilov/Fitness_project/tree/master/src/assets/scrennshots/1.png)
 2. Search and filter by categories
 ![Search](https://github.com/aboronilov/Fitness_project/tree/master/src/assets/screenshots/2.png)
 3. Search result
